@@ -1,0 +1,63 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Poetry virtual environment
+.poetry/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# macOS specific
+.DS_Store
+
+# VS Code
+.vscode/
+
+# IDE and editor-specific
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+coverage.xml
+
+# Mypy & linting
+.mypy_cache/
+ruff_cache/
+
+# Pipenv
+Pipfile.lock
+
+# Secrets
+secrets.toml
+
+# Temporary files
+*.tmp
+*.bak
+*.orig

@@ -1,0 +1,45 @@
+[project]
+name = "formatter"
+version = "0.1.0"
+description = "Formatter for raw text"
+authors = [
+    {name = "Aldo Ortega",email = "aldoconchao@gmail.com"}
+]
+license = {text = "MIT License"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "dateparser (>=1.2.1,<2.0.0)",
+    "numpy (>=2.2.4,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    "ANN",
+    "W",
+    "N",   
+]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.2"
+pytest = "^8.3.5"
+pytest-cov = "^6.0.0"
+
