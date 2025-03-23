@@ -1,17 +1,31 @@
 import datetime
-import pandas as pd
+from collections.abc import Callable
+
 import dateparser
 import numpy as np
+import pandas as pd
 
 
 class BaseFormatter:
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
-    def _apply_not_nan(self, series, function, **kwargs):
-        return series.apply(lambda series_value: function(series_value, **kwargs) if (not pd.isnull(series_value)) else np.nan)
+    def _apply_not_nan(
+        self, series: pd.Series, function: Callable, **kwargs: dict
+    ) -> pd.Series:
+        return series.apply(
+            lambda series_value: function(series_value, **kwargs)
+            if (not pd.isnull(series_value))
+            else np.nan
+        )
 
-    def date(self, raw_date, output_format="%d-%m-%Y", return_original=False, **kwargs):
+    def date(
+        self,
+        raw_date: pd.Series,
+        output_format: str = "%d-%m-%Y",
+        return_original: bool = False,
+        **kwargs: dict,
+    ) -> pd.Series:
         # Converting to timestamp
         date = self._apply_not_nan(raw_date, dateparser.parse, **kwargs)
         parsed_date = self._apply_not_nan(
