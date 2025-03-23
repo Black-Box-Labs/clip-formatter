@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - master  # Run CI on PRs targeting master
+  push:  # Triggers on ANY push to ANY branch
+  workflow_dispatch: # Run CI manually
 
 jobs:
   build:
