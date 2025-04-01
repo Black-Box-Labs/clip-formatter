@@ -26,6 +26,19 @@ class BaseFormatter:
         return_original: bool = False,
         **kwargs: dict,
     ) -> pd.Series:
+        """Format a date column to a standard date format.
+
+        Format a date column to a standard date format. The function uses the dateparser 
+        library to parse the date and then format it to the desired output pattern.
+
+        Args:
+            raw_date (pd.Series): raw date column.
+            output_format (str, optional): Deired output patern. Defaults to "%d-%m-%Y".
+            return_original (bool, optional): _description_. Defaults to False.
+
+        Returns:
+            pd.Series: _description_
+        """
         # Converting to timestamp
         date = self._apply_not_nan(raw_date, dateparser.parse, **kwargs)
         parsed_date = self._apply_not_nan(
